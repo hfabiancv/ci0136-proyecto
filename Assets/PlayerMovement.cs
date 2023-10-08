@@ -48,6 +48,16 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         moveDir = new Vector3(x, y).normalized;
+
+        // flip the character
+        if (x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     private void FixedUpdate()
