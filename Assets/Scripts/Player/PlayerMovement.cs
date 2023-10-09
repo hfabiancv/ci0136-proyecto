@@ -59,8 +59,24 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveCharacter(float x, float y)
     {
+        checkMovement();
+        // set move direction
+        moveDir = new Vector3(x, y).normalized;
 
-        // set animator parameters
+        // flip the character
+        if (x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+    }
+
+    void checkMovement()
+    {
+        // check if the character is moving
         if (x != 0 || y != 0)
         {
             animator.SetFloat("X", x);
@@ -81,18 +97,6 @@ public class PlayerMovement : MonoBehaviour
                 isMoving = false;
                 StopMoving();
             }
-        }
-        // set move direction
-        moveDir = new Vector3(x, y).normalized;
-
-        // flip the character
-        if (x > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }
