@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AIChase : MonoBehaviour
 {
-
     public GameObject player;
     public float speed;
     // enemy health
@@ -14,7 +13,7 @@ public class AIChase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
