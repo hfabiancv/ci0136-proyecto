@@ -5,34 +5,67 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb2D;
-
     public Animator animator;
+    // move speed
     public float moveSpeed;
-
+    // player input
     public float x, y;
-
+    // is the character moving?
     private bool isMoving;
-
+    // move direction
     private Vector3 moveDir;
+    // current state
+    private PlayerState currentState;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        ChangeState(new IdleState(this));
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // get input
+        // get player input
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
+        // update the current state
+        currentState.Update();
+    }
+
+    private void FixedUpdate()
+    {
+        // move the character
+        rb2D.velocity = moveDir * moveSpeed * Time.deltaTime;
+    }
+
+    private void StopMoving()
+    {
+        // stop the character
+        rb2D.velocity = Vector2.zero;
+    }
+
+    public void ChangeState(PlayerState newState)
+    {
+        // exit the current state
+        if (currentState != null)
+        {
+            currentState.Exit();
+        }
+        // enter the new state
+        currentState = newState;
+        currentState.Enter();
+    }
+
+    public void MoveCharacter(float x, float y)
+    {
+
         // set animator parameters
         if (x != 0 || y != 0)
         {
             animator.SetFloat("X", x);
             animator.SetFloat("Y", y);
+            // set moving animation
             if (!isMoving)
             {
                 animator.SetBool("isMoving", true);
@@ -41,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            // set idle animation
             if (isMoving)
             {
                 animator.SetBool("isMoving", false);
@@ -60,17 +94,5 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-    }
-
-    private void FixedUpdate()
-    {
-        // move the character
-        rb2D.velocity = moveDir * moveSpeed * Time.deltaTime;
-    }
-
-    private void StopMoving()
-    {
-        // stop the character
-        rb2D.velocity = Vector2.zero;
     }
 }
