@@ -25,9 +25,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // get input
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
-
+        // set animator parameters
         if (x != 0 || y != 0)
         {
             animator.SetFloat("X", x);
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
                 StopMoving();
             }
         }
+        // set move direction
         moveDir = new Vector3(x, y).normalized;
 
         // flip the character
@@ -62,11 +64,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // move the character
         rb2D.velocity = moveDir * moveSpeed * Time.deltaTime;
     }
 
     private void StopMoving()
     {
+        // stop the character
         rb2D.velocity = Vector2.zero;
     }
 }
