@@ -3738,7 +3738,7 @@ GameObject:
   - component: {fileID: 851020401}
   m_Layer: 0
   m_Name: Demon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5626,7 +5626,7 @@ GameObject:
   - component: {fileID: 1937193912}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5668,6 +5668,7 @@ MonoBehaviour:
   moveSpeed: 250
   x: 0
   y: 0
+  health: 100
 --- !u!50 &1937193914
 Rigidbody2D:
   serializedVersion: 4

@@ -81,9 +81,7 @@ public class PlayerWeapon : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // Spawn a bullet at the spawner
-            GameObject bullet = Instantiate(bulletPrefab);
-            bullet.transform.position = spawner.position;
-            bullet.transform.rotation = transform.rotation;
+            GameObject bullet = Instantiate(bulletPrefab, spawner.position, transform.rotation);;
             // Destroy the bullet after 2 seconds
             Destroy(bullet, 2f);
         }

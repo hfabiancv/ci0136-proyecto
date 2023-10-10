@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDir;
     // current state
     private PlayerState currentState;
+    // player health
+    public int health = 100;
 
 
     void Start()
@@ -31,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         y = Input.GetAxisRaw("Vertical");
         // update the current state
         currentState.Update();
+        checkDeath();
     }
 
     private void FixedUpdate()
@@ -99,4 +102,27 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    // create method to reduce health if player is in contact with enemy
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Player is being hit by enemy");
+            health -= 1;
+        }
+    }
+
+    // check if player is dead
+    void checkDeath()
+    {
+        // if player is dead
+        if (health <= 0)
+        {
+            // if player is dead
+            Debug.Log("Player is dead");
+            Destroy(gameObject);
+        }
+    }
+
 }

@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     // bullet speed
     public float speed = 5f;
-    private new Rigidbody2D rb2D;
+    private Rigidbody2D rb2D;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +25,5 @@ public class Bullet : MonoBehaviour
         // move bullet position
         rb2D.MovePosition(transform.position + transform.right * speed * Time.fixedDeltaTime);
     }
-
 
 }
