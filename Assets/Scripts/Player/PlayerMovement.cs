@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Data.SqlClient;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -38,7 +40,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        string connectionString = "Data Source=172.16.202.209;Initial Catalog=ProyectoToDoList;User ID=JuegosUnity;Password=JuegosUnityProyecto2023";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+
+                Debug.Log("Conexión exitosa");
+            }
+            catch (Exception ex)
+            {
+                Debug.Log("Error: " + ex.Message);
+            }
+        }
         // move the character
+        Debug.Log("aaa");
         rb2D.velocity = moveDir * moveSpeed * Time.deltaTime;
     }
 
