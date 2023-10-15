@@ -27,7 +27,6 @@ PC
 ## Asset's credits
 
 * https://0x72.itch.io/dungeontileset-ii (0x72)
-* https://pixel-poem.itch.io/dungeon-assetpuck (Pixel_Poem)
 
 
 ## Developers
