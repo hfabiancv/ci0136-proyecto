@@ -7,10 +7,15 @@ using System.Data;
 
 public class Achievements : MonoBehaviour
 {
+
+    public bool connected = true;
     // Start is called before the first frame update
     void Start()
     {
-        connectToDatabase();
+        if (connected)
+        {
+            connectToDatabase();
+        }
     }
 
     // Update is called once per frame

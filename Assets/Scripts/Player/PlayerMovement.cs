@@ -108,12 +108,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            
             Debug.Log("Player is being hit by enemy");
-            health -= 1;
+            health -= 5;
         }
     }
 
-    // check if player is dead
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+    }
+
+    // check if player is deadd
     void checkDeath()
     {
         // if player is dead
