@@ -13,11 +13,15 @@ public class Player : Character
 
     protected override void OnTriggerEnter2D(Collider2D coll)
     {
-        Debug.Log("Player OnTriggerStay2D");
         if (coll.gameObject.tag == "Enemy")
         {
-            Debug.Log("Enemy hit by bullet");
-            base.ReceiveDamage(damage);
+            Enemy enemy = coll.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                Debug.Log("Player is hit by the enemy");
+                base.ReceiveDamage(enemy.damage);
+            }
         }
     }
+
 }
