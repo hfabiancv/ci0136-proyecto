@@ -22,6 +22,16 @@ public class Enemy : Character
                 base.ReceiveDamage(bullet.damage);
             }
         }
+
+        // if (coll.gameObject.tag == "Player")
+        // {
+        //     Player player = coll.gameObject.GetComponent<Player>();
+        //     if (player != null)
+        //     {
+        //         Debug.Log("enemy is hit by the player");
+        //         base.ReceiveDamage(player.damage);
+        //     }
+        // }
     }
 
 }

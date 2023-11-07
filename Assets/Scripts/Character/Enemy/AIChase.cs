@@ -25,24 +25,4 @@ public class AIChase : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         // checkDeath();
     }
-
-    // check if enemy is hit by player
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Bullet")
-    //     {
-    //         // if player is hit by enemy
-    //         Debug.Log("Enemy is hit by the player");
-    //         health -= 10;
-    //     }
-    // }
-
-    // check health
-    // private void checkDeath()
-    // {
-    //     if (health <= 0)
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
 }

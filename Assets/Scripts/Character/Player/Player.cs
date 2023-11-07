@@ -8,6 +8,7 @@ public class Player : Character
     void Start()
     {
         health = 100;
+        // melee damage
         damage = 10;
     }
 
