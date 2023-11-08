@@ -16,6 +16,8 @@ public class PlayerWeapon : MonoBehaviour
     // Reference to the bullet prefab
     public GameObject bulletPrefab;
 
+    // Reference to the animator component
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +83,9 @@ public class PlayerWeapon : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // Spawn a bullet at the spawner
-            GameObject bullet = Instantiate(bulletPrefab, spawner.position, transform.rotation);;
+            GameObject bullet = Instantiate(bulletPrefab, spawner.position, transform.rotation);
+            // Start shooting animation
+            animator.SetTrigger("Shoot");
             // Destroy the bullet after 2 seconds
             Destroy(bullet, 2f);
         }
