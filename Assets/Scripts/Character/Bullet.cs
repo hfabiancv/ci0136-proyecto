@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     // bullet damage
     public int damage = 10;
 
+    public GameObject impactEffect;
+
     // bullet speed
     public float speed = 5f;
     private Rigidbody2D rb2D;
@@ -19,6 +21,8 @@ public class Bullet : MonoBehaviour
     // destroy bullet when it hits something
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameObject effect = Instantiate(impactEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.5f);
         Destroy(gameObject);
     }
 
