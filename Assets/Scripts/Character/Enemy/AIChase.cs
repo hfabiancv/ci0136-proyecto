@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class AIChase : MonoBehaviour
 {
-    public GameObject player;
     public float speed;
-    // enemy health
-    // public int health = 100;
     // distance to player
     private float distanceToPlayer;
 
+    private Transform target;
+
     void Start()
     {
-
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
 
     void Update()
     {
-        Vector2 direction = player.transform.position - transform.position;
+        Vector2 direction = target.position - transform.position;
         direction.Normalize();
 
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         // checkDeath();
     }
 }

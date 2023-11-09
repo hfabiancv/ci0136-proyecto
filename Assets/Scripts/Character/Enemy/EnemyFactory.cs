@@ -1,10 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Object = UnityEngine.Object;
+
+// include for Quaternion and Vector3
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
+using Transform = UnityEngine.Transform;
+
 
 namespace Enemies
 {
-    public class EnemyFactory : MonoBehaviour
+    public class EnemyFactory
     {
         private readonly EnemyConfiguration _enemyConfiguration;
 
@@ -12,11 +16,12 @@ namespace Enemies
         {
             _enemyConfiguration = enemyConfiguration;
         }
-
-        public Character Create(string id)
+        // string id, position, rotation
+        public Character Create(string id, Transform transform)
         {
             var enemy = _enemyConfiguration.GetEnemyPrefabById(id);
-            return Object.Instantiate(enemy);
+            return Object.Instantiate(enemy, transform.position, transform.rotation);
         }
+
     }
 }
