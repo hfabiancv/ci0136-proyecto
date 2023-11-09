@@ -23,15 +23,12 @@ public class EnemySpawner : MonoBehaviour
         {
             case 1:
                 Character weak = _enemyFactory.Create("Weak");
-                Instantiate(weak, transform.position, Quaternion.identity);
                 break;
             case 2:
                 Character normal = _enemyFactory.Create("Normal");
-                Instantiate(normal, transform.position, Quaternion.identity);
                 break;
             case 3:
                 Character superior = _enemyFactory.Create("Superior");
-                Instantiate(superior, transform.position, Quaternion.identity);
                 break;
             default:
                 Debug.Log("Default" + enemyId);
