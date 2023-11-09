@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2941170352124288222}
   - component: {fileID: 2103232722012245281}
   - component: {fileID: 5360046039411175751}
-  - component: {fileID: 4792953249359568226}
+  - component: {fileID: 286574129950740005}
   m_Layer: 6
   m_Name: Ogre
   m_TagString: Enemy
@@ -223,7 +223,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
---- !u!114 &4792953249359568226
+--- !u!114 &286574129950740005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,8 +232,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2208645963642015587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eea6aa253388ebe4b9738e6ef0bdb01b, type: 3}
+  m_Script: {fileID: 11500000, guid: 68ffafb7ff60b1b479fb99a912121492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  damage: 10
+  health: 200
+  damage: 20
+  id: Normal

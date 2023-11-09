@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3534959655357160305}
   - component: {fileID: 1154573846805412115}
   - component: {fileID: 2384753388086190803}
-  - component: {fileID: 8323811165234029349}
+  - component: {fileID: 7630972073876678328}
   m_Layer: 6
   m_Name: Demon
   m_TagString: Enemy
@@ -223,7 +223,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
---- !u!114 &8323811165234029349
+--- !u!114 &7630972073876678328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,8 +232,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8381111548202347475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eea6aa253388ebe4b9738e6ef0bdb01b, type: 3}
+  m_Script: {fileID: 11500000, guid: c0400bd84e43e3a4c8f873d4ba36a655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  damage: 10
+  health: 400
+  damage: 40
+  id: Superior

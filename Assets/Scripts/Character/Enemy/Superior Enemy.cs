@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character
+public class SuperiorEnemy : Character
 {
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
-        damage = 10;
+        health = 400;
+        damage = 40;
+        id = "Superior";
     }
 
     protected override void OnTriggerEnter2D(Collider2D coll)
@@ -22,16 +23,6 @@ public class Enemy : Character
                 base.ReceiveDamage(bullet.damage);
             }
         }
-
-        // if (coll.gameObject.tag == "Player")
-        // {
-        //     Player player = coll.gameObject.GetComponent<Player>();
-        //     if (player != null)
-        //     {
-        //         Debug.Log("enemy is hit by the player");
-        //         base.ReceiveDamage(player.damage);
-        //     }
-        // }
     }
 
 }
