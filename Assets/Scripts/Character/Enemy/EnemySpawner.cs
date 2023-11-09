@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField]
     private float _maximumID;
-
+    [SerializeField]
     private EnemyFactory _enemyFactory;
 
     [SerializeField]
@@ -17,7 +17,29 @@ public class EnemySpawner : MonoBehaviour
     // Enemy spawner transform
     private Transform _spawnerTransform;
 
+     [SerializeField]
+    private float _minimumSpawnTime;
+
+    [SerializeField]
+    private float _maximumSpawnTime;
+
+    private float _timeUntilSpawn;
+
     void Awake()
+    {
+        SetTimeUntilSpawn();       
+    }
+
+    void Update() 
+    {
+        _timeUntilSpawn -= Time.deltaTime;
+        if (_timeUntilSpawn <= 0) {
+            SpawnEnemy();
+            SetTimeUntilSpawn();
+        } 
+    }
+
+    void SpawnEnemy() 
     {
         _spawnerTransform = GetComponent<Transform>();
         _enemyFactory = new EnemyFactory(Instantiate(_enemyConfiguration));
@@ -37,12 +59,11 @@ public class EnemySpawner : MonoBehaviour
             default:
                 Debug.Log("Default" + enemyId);
                 break;
-
         }
     }
 
-    void Update()
+     private void SetTimeUntilSpawn()
     {
-        
+        _timeUntilSpawn = Random.Range(_minimumSpawnTime, _maximumSpawnTime);
     }
 }

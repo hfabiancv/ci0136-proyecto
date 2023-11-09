@@ -16,12 +16,11 @@ namespace Enemies
         {
             _enemyConfiguration = enemyConfiguration;
         }
-        // string id, position, rotation
+        
         public Character Create(string id, Transform transform)
         {
             var enemy = _enemyConfiguration.GetEnemyPrefabById(id);
             return Object.Instantiate(enemy, transform.position, transform.rotation);
         }
-
     }
 }

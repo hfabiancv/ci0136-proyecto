@@ -13,6 +13,7 @@ namespace Enemies
 
         private void Awake()
         {
+
             _idCharacter = new Dictionary<string, Character>();
             foreach (var enemy in _character)
             {

@@ -22,6 +22,5 @@ public class AIChase : MonoBehaviour
         direction.Normalize();
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        // checkDeath();
     }
 }

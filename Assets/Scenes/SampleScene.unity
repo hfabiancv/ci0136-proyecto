@@ -43267,7 +43267,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1677526175}
   - component: {fileID: 1677526174}
-  - component: {fileID: 1677526176}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -43290,6 +43289,8 @@ MonoBehaviour:
   _minimumID: 1
   _maximumID: 4
   _enemyConfiguration: {fileID: 11400000, guid: d827fc4a962285d43abf5e9b79087d89, type: 2}
+  _minimumSpawnTime: 5
+  _maximumSpawnTime: 10
 --- !u!4 &1677526175
 Transform:
   m_ObjectHideFlags: 0
@@ -43299,24 +43300,12 @@ Transform:
   m_GameObject: {fileID: 1677526173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.4, y: 4.09, z: -0.017741764}
+  m_LocalPosition: {x: -15.65, y: -0.25, z: -0.017741764}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1677526176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677526173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4349c18c154a48c4e8120f911649c1f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1701807554
 GameObject:
   m_ObjectHideFlags: 3
