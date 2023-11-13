@@ -8,11 +8,13 @@ public class Character : MonoBehaviour
     public int damage = 10;
     public string id = "";
 
+    protected bool isAlive = true;
+
     protected virtual void ReceiveDamage(int damage)
     {
         health -= damage;
 
-        if (health <= 0)
+        if (health <= 0 && isAlive)
         {
             Die();
         }
@@ -21,6 +23,7 @@ public class Character : MonoBehaviour
     protected virtual void Die()
     {
         Debug.Log("Character died.");
+        isAlive = false;
         Destroy(gameObject);
     }
 
@@ -46,5 +49,10 @@ public class Character : MonoBehaviour
                 character.ReceiveDamage(damage);
             }
         }
+    }
+
+    public virtual void Test()
+    {
+        Debug.Log("Test");
     }
 }

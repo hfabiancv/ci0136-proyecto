@@ -41,9 +41,5 @@ public class PivotRotation : MonoBehaviour
             }
 
         }
-
-        // make the crosshair follow the mouse
-
-
     }
 }
