@@ -18,8 +18,8 @@ TagManager:
   - Enemy
   - Player
   - Blocking
-  - 
-  - 
+  - Trigger
+  - Bullet
   - 
   - 
   - 
