@@ -10,17 +10,21 @@ namespace Enemies
 {
     public class EnemyFactory
     {
-        private readonly EnemyConfiguration _enemyConfiguration;
+        private readonly Wave _wave;
 
-        public EnemyFactory(EnemyConfiguration enemyConfiguration)
+        public EnemyFactory(Wave wave)
         {
-            _enemyConfiguration = enemyConfiguration;
+            _wave = wave;
         }
+    
         
         public Character Create(string id, Transform transform)
         {
-            var enemy = _enemyConfiguration.GetEnemyPrefabById(id);
+            var enemy = _wave.GetEnemyPrefabById(id);
+            // Could be used to play an animation
+            enemy.Test();
             return Object.Instantiate(enemy, transform.position, transform.rotation);
         }
+
     }
 }
