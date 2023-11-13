@@ -13,7 +13,7 @@ public class Wave : ScriptableObject
     public float TimeBeforeThisWave { get; private set; }
  
     [field: SerializeField]
-    public float AmountToSpawn { get; private set; }
+    public int AmountToSpawn { get; private set; }
 
     private Dictionary<string, Character> _idCharacter;
 
