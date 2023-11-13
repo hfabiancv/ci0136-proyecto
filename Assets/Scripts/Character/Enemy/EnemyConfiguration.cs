@@ -30,5 +30,16 @@ namespace Enemies
 
             return Enemy;
         }
+
+  
+        public string[] GetEnemyIds()
+        {
+            string[] ids = new string[_character.Length];
+            for (int i = 0; i < _character.Length; i++)
+            {
+                ids[i] = _character[i].id;
+            }   
+            return ids;
+        }
     }
 }

@@ -8,7 +8,7 @@ public class Character : MonoBehaviour
     public int damage = 10;
     public string id = "";
 
-    public void ReceiveDamage(int damage)
+    protected virtual void ReceiveDamage(int damage)
     {
         health -= damage;
 
@@ -18,7 +18,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void Die()
+    protected virtual void Die()
     {
         Debug.Log("Character died.");
         Destroy(gameObject);

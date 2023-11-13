@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalEnemy : Character
+public class Enemy : Character
 {
+    public GameObject deathEffect;
+
     // Start is called before the first frame update
     void Start()
     {
         health = 200;
         damage = 20;
-        id = "Normal";
     }
 
     protected override void OnTriggerEnter2D(Collider2D coll)
@@ -23,6 +24,13 @@ public class NormalEnemy : Character
                 base.ReceiveDamage(bullet.damage);
             }
         }
+    }
+
+    protected override void Die() {
+        Debug.Log("Enemy died.");
+        GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.5f);
+        Destroy(gameObject);
     }
 
 }

@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     // current state
     private PlayerState currentState;
 
+    public new Camera camera;
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -32,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
         y = Input.GetAxisRaw("Vertical");
         // update the current state
         currentState.Update();
+
+
+        // Get the position of the mouse cursor in the game world
+        Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
@@ -61,17 +67,7 @@ public class PlayerMovement : MonoBehaviour
     {
         checkMovement();
         // set move direction
-        moveDir = new Vector3(x, y).normalized;
-
-        // flip the character
-        if (x > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+        moveDir = new Vector3(x, y).normalized;       
     }
 
     void checkMovement()

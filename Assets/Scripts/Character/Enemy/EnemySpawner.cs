@@ -25,9 +25,11 @@ public class EnemySpawner : MonoBehaviour
 
     private float _timeUntilSpawn;
 
+    private string[] _enemyNames;
+
     void Awake()
     {
-        SetTimeUntilSpawn();       
+        SetTimeUntilSpawn(); 
     }
 
     void Update() 
@@ -41,25 +43,15 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy() 
     {
+        _enemyNames = _enemyConfiguration.GetEnemyIds();      
         _spawnerTransform = GetComponent<Transform>();
         _enemyFactory = new EnemyFactory(Instantiate(_enemyConfiguration));
         int enemyId = ((int)Random.Range(_minimumID, _maximumID));
+
+        string name = _enemyNames[enemyId - 1];
+
         Debug.Log(enemyId);
-        switch (enemyId)
-        {
-            case 1:
-                Character weak = _enemyFactory.Create("Weak", _spawnerTransform);
-                break;
-            case 2:
-                Character normal = _enemyFactory.Create("Normal", _spawnerTransform);
-                break;
-            case 3:
-                Character superior = _enemyFactory.Create("Superior", _spawnerTransform);
-                break;
-            default:
-                Debug.Log("Default" + enemyId);
-                break;
-        }
+        Character enemy = _enemyFactory.Create(name, _spawnerTransform);
     }
 
      private void SetTimeUntilSpawn()
