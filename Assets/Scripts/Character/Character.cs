@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,13 +9,13 @@ public class Character : MonoBehaviour
     public int damage = 10;
     public string id = "";
 
-    protected bool isAlive = true;
+    public event EventHandler OnCharacterDied;
 
     protected virtual void ReceiveDamage(int damage)
     {
         health -= damage;
 
-        if (health <= 0 && isAlive)
+        if (health <= 0)
         {
             Die();
         }
@@ -23,8 +24,13 @@ public class Character : MonoBehaviour
     protected virtual void Die()
     {
         Debug.Log("Character died.");
-        isAlive = false;
+        signalDeath();
         Destroy(gameObject);
+    }
+
+    protected void signalDeath()
+    {
+        OnCharacterDied?.Invoke(this, EventArgs.Empty);
     }
 
     protected virtual void OnTriggerStay2D(Collider2D coll)

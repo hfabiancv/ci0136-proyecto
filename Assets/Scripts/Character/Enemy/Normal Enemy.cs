@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,21 +28,14 @@ public class Enemy : Character
     }
 
     protected override void Die() {
-        if (isAlive)
-        {
-            Debug.Log("Enemy died.");
-            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 0.5f);
-            isAlive = false;
-            Destroy(gameObject);
-        }
+        base.signalDeath();
+        Debug.Log("Enemy died.");
+        GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.5f);
+        Destroy(gameObject);
     }
 
     public override void Test() {
         Debug.Log("Test");  
-    }
-
-    public bool IsAlive() {
-        return isAlive;
     }
 }
