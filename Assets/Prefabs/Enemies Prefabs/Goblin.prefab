@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4828897209905715179}
   - component: {fileID: 2515435986876922401}
-  - component: {fileID: 4311702091930441707}
+  - component: {fileID: 7690374750479989858}
   - component: {fileID: 2927775738022994626}
   - component: {fileID: 356772532449456128}
   - component: {fileID: 8837569800643456845}
@@ -89,8 +89,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4311702091930441707
-BoxCollider2D:
+--- !u!58 &7690374750479989858
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,19 +121,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05485058, y: -0.19288158}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.052222252, y: -0.25017834}
   serializedVersion: 2
-  m_Size: {x: 0.63578033, y: 0.6129856}
-  m_EdgeRadius: 0
+  m_Radius: 0.3072672
 --- !u!50 &2927775738022994626
 Rigidbody2D:
   serializedVersion: 4
@@ -195,7 +185,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
-  animator: {fileID: 356772532449456128}
+  obstacleDetectionRange: 2
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &2156128040132275338
 MonoBehaviour:
   m_ObjectHideFlags: 0

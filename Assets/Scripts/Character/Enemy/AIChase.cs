@@ -5,39 +5,46 @@ using UnityEngine;
 public class AIChase : MonoBehaviour
 {
     public float speed;
-    // distance to player
-    private float distanceToPlayer;
-
-    public Animator animator;
+    public float obstacleDetectionRange = 1f; // adjust the range based on your needs
+    public LayerMask obstacleLayer; // set the layer for obstacles in the Inspector
 
     private Transform target;
+    private Animator animator;
 
-    private float x;
-    private float y;
-
-    void Start()
+    private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        animator = GetComponent<Animator>();
     }
 
-
-    void Update()
+    private void Update()
     {
         Vector2 direction = target.position - transform.position;
         direction.Normalize();
 
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        animator.SetBool("isMoving", true);
-        // get x and y values
-        x = target.position.x - transform.position.x;
-        y = target.position.y - transform.position.y;
+        // Check for obstacles in the path
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, obstacleDetectionRange, obstacleLayer);
 
-        // flip sprite
-        if (x > 0)
+        if (hit.collider != null)
+        {
+            // Obstacle detected, calculate a new direction to move around the obstacle
+            Vector2 avoidanceDirection = Vector2.Perpendicular(direction).normalized;
+            transform.position = Vector2.MoveTowards(transform.position, transform.position + (Vector3) avoidanceDirection, speed * Time.deltaTime);
+        }
+        else
+        {
+            // No obstacle, continue chasing the player
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
+
+        animator.SetBool("isMoving", true);
+
+        // Flip sprite
+        if (direction.x > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (x < 0)
+        else if (direction.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
