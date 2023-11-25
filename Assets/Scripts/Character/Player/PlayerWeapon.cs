@@ -12,6 +12,7 @@ public class PlayerWeapon : MonoBehaviour
     // Reference to the animator component
     public Animator animator;
 
+    [SerializeField] private AudioClip shootSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class PlayerWeapon : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, spawner.position, transform.rotation);
             // Start shooting animation
             animator.SetTrigger("Shoot");
+            SoundController.instance.ExecuteSound(shootSound);
             // Destroy the bullet after 2 seconds
             Destroy(bullet, 2f);
         }
