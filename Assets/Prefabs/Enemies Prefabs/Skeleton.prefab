@@ -189,6 +189,7 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
+  enemyAudio: {fileID: 8300000, guid: ea9eff2564b22379c973e14cc588fd7e, type: 3}
 --- !u!114 &4791552645783651594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,4 +205,5 @@ MonoBehaviour:
   health: 60
   damage: 15
   id: Skeleton
+  audio: {fileID: 0}
   deathEffect: {fileID: 8638212397507965406, guid: b3c3a79295c337f4f8176640da94e1e6, type: 3}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIChase : MonoBehaviour
+public class BossChase : MonoBehaviour
 {
     public float speed;
     public float obstacleDetectionRange = 1f; // adjust the range based on your needs
@@ -10,15 +10,12 @@ public class AIChase : MonoBehaviour
     private bool sound;
     private Transform target;
     private Animator animator;
-    [SerializeField] private AudioClip enemyAudio;
+    [SerializeField] private AudioClip bossAudio;
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animator = GetComponent<Animator>();
         sound = false;
-        //this.Log("hello");
-        Component c = this;
-        Debug.Log("componente: " + c);
     }
 
     private void Update()
@@ -59,11 +56,10 @@ public class AIChase : MonoBehaviour
         if (sound == false) {
             while (true) {
                 sound = true;
-                SoundController.instance.ExecuteSound(enemyAudio); 
+                SoundController.instance.ExecuteSound(bossAudio); 
                 yield return new WaitForSeconds(1);   
             }
             sound = false;
         }
     }
-
 }

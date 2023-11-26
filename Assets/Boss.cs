@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character
+public class Boss : Character
 {
     public GameObject deathEffect;
-    AudioSource enemyAudio;
+    AudioSource bossAudio;
     // Start is called before the first frame update
     void Start()
     {
-        health = 200;
-        damage = 20;
+        health = 2000;
+        damage = 200;
     }
 
     
@@ -24,21 +24,16 @@ public class Enemy : Character
             {
                 Debug.Log("enemy is hit by the player bullet");
                 base.ReceiveDamage(bullet.damage);
-                
             }
         }
     }
 
     protected override void Die() {
         base.signalDeath();
-        Debug.Log("Enemy died.");
+        Debug.Log("Boss died.");
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.5f);
         Destroy(gameObject);
-    }
-
-    public override void Test() {
-        Debug.Log("Test");  
     }
 
 }
