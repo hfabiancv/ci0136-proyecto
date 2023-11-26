@@ -21,17 +21,18 @@ public class PlayerWeapon : MonoBehaviour
     void Update()
     {
         // Check if the player is firing
-        checkFiring();
+        CheckFiring();
     }
 
     // Spawns a bullet at the weapon's spawner if the player is firing
-    private void checkFiring()
+    private void CheckFiring()
     {
         // Check if the player is firing
         if (Input.GetMouseButtonDown(0))
         {
             // Spawn a bullet at the spawner
             GameObject bullet = Instantiate(bulletPrefab, spawner.position, transform.rotation);
+            CinemachineShake.Instance.ShakeCamera(2f, .1f);
             // Start shooting animation
             animator.SetTrigger("Shoot");
             // Destroy the bullet after 2 seconds
