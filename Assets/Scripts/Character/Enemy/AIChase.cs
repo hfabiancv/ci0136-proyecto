@@ -7,18 +7,20 @@ public class AIChase : MonoBehaviour
     public float speed;
     public float obstacleDetectionRange = 1f; // adjust the range based on your needs
     public LayerMask obstacleLayer; // set the layer for obstacles in the Inspector
-
+    private bool sound;
     private Transform target;
     private Animator animator;
-
+    [SerializeField] private AudioClip enemyAudio;
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animator = GetComponent<Animator>();
+        sound = false;
     }
 
     private void Update()
     {
+        StartCoroutine(getSound());
         Vector2 direction = target.position - transform.position;
         direction.Normalize();
 
@@ -47,6 +49,17 @@ public class AIChase : MonoBehaviour
         else if (direction.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+        }
+    }
+
+    public IEnumerator getSound() {
+        if (sound == false) {
+            while (true) {
+                sound = true;
+                SoundController.instance.ExecuteSound(enemyAudio); 
+                yield return new WaitForSeconds(1);   
+            }
+            sound = false;
         }
     }
 }

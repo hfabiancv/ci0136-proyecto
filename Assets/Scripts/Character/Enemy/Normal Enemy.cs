@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy : Character
 {
     public GameObject deathEffect;
-
+    AudioSource enemyAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +14,7 @@ public class Enemy : Character
         damage = 20;
     }
 
+    
     protected override void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Bullet")
@@ -38,4 +39,5 @@ public class Enemy : Character
     public override void Test() {
         Debug.Log("Test");  
     }
+
 }
