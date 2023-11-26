@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2156128040132275338}
   m_Layer: 6
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: b6c0c0979aa03584d9dcdf23c06c3691, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ffafb7ff60b1b479fb99a912121492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 80
+  health: 1
   damage: 10
   id: Goblin
   deathEffect: {fileID: 8638212397507965406, guid: b3c3a79295c337f4f8176640da94e1e6, type: 3}

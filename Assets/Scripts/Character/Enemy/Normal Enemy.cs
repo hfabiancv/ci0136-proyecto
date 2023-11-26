@@ -10,7 +10,6 @@ public class Enemy : Character
     // Start is called before the first frame update
     void Start()
     {
-        health = 200;
         damage = 20;
     }
 
