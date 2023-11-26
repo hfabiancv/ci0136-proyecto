@@ -48,23 +48,13 @@ public class WaveSpawner : MonoBehaviour
         if (!stopSpawning) {
             SpawnWave();
             IncrementWave();
+        } else {
+            if (enemiesRemaining <= 0) {
+                Debug.Log("Battle over!");
+                OnBattleOver?.Invoke(this, EventArgs.Empty);
+            }
         }
     }
- 
-    // private void Update()
-    // {
-    //     if(!stopSpawning)
-    //     {
-    //         if (enemiesRemaining <= 0) {
-    //             // if (Time.time >= spawnsWaitTime)
-    //             // {
-    //                 SpawnWave();
-    //                 IncrementWave();
-    //                 // spawnsWaitTime = Time.time + currentWave.TimeBeforeThisWave;
-    //             // }
-    //         }
-    //     }
-    // }
  
     private void SpawnWave()
     {
@@ -101,8 +91,6 @@ public class WaveSpawner : MonoBehaviour
         else
         {
             stopSpawning = true;
-            // signal battle over
-            OnBattleOver?.Invoke(this, EventArgs.Empty);
         }
     }
  

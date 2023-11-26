@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Blocking
+    uniqueID: 3986157085
+    locked: 0
   - name: Floor
     uniqueID: 3751272719
     locked: 0
@@ -50,9 +53,6 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 362953227
-    locked: 0
-  - name: Blocking
-    uniqueID: 3986157085
     locked: 0
   - name: Default
     uniqueID: 0
