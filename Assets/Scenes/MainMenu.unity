@@ -1249,7 +1249,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1389918951}
-        m_TargetAssemblyTypeName: QuitButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1307,9 +1307,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1389918946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8f841d1b1fd3540adba103ee04cfa3, type: 3}
+  m_Script: {fileID: 11500000, guid: b016f1341becede41bf71e4d64bd09f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStartScene: 0
 --- !u!1 &1570581608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,8 +1501,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1658011373}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: StartGame
+        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
+        m_MethodName: SelectScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

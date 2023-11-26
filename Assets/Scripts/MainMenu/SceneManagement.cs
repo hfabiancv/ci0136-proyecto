@@ -13,4 +13,10 @@ public class SceneManagement : MonoBehaviour
         Debug.Log("Scene changed!");
         SceneManager.LoadScene(gameStartScene);
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Game Quit!");
+        Application.Quit();
+    }
 }

@@ -7,6 +7,8 @@ public class Player : Character
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 0;
+        maxHealth = 100;
         health = 100;
         // melee damage
         damage = 10;
