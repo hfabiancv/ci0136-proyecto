@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class SceneManagement : MonoBehaviour
 {
     public int gameStartScene;
 
     // Update is called once per frame
-    public void StartGame()
+    public void SelectScene()
     {
-        Debug.Log("Game Start!");
+        Debug.Log("Scene changed!");
         SceneManager.LoadScene(gameStartScene);
     }
 }
