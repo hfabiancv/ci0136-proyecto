@@ -123,64 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &244485205 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5396045985291234232, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-  m_PrefabInstance: {fileID: 1029467463}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &244485206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244485205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3361f2d01fe38241b11685182978e10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followSpeed: 5
-  slowDownDistance: 1
-  avoidanceDistance: 2
-  obstacleLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
---- !u!58 &244485214
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244485205}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0068774223, y: -0.29481983}
-  serializedVersion: 2
-  m_Radius: 0.5610838
 --- !u!1 &260556746
 GameObject:
   m_ObjectHideFlags: 0
@@ -25029,85 +24971,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!1001 &1029467463
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 17771919816271791, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 17771919816271791, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: obstacleLayer.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 17771919816271791, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: obstacleDetectionRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 253613445815738097, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -21.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537208614784877648, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396045985291234232, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      propertyPath: m_Name
-      value: Big Demon
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5396045985291234232, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 244485214}
-    - targetCorrespondingSourceObject: {fileID: 5396045985291234232, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 244485206}
-  m_SourcePrefab: {fileID: 100100000, guid: 8a2fdb9bfb8428d44a9494b5b475b9f0, type: 3}
 --- !u!1 &1173459230
 GameObject:
   m_ObjectHideFlags: 0
@@ -56561,9 +56424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f81035d1705ae94689536743da22bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doors:
-  - {fileID: 0}
-  waveSpawner: {fileID: 1302933822}
 --- !u!1 &1340373351
 GameObject:
   m_ObjectHideFlags: 0
@@ -56634,7 +56494,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1340373353
@@ -57576,4 +57436,3 @@ SceneRoots:
   - {fileID: 460141135}
   - {fileID: 483327556}
   - {fileID: 1340373353}
-  - {fileID: 1029467463}
