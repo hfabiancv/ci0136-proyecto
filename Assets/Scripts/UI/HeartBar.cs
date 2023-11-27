@@ -44,6 +44,5 @@ public class Healthbar : Player
             hearts[i].enabled = true;
             hearts[i].sprite = fullHearts;
         }
-        Debug.Log("Current Health: " + health + "/" + maxHealth);
     }
 }

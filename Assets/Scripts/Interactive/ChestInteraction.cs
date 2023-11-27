@@ -7,7 +7,6 @@ public class ChestInteraction : MonoBehaviour
 {
     public Animator animator;
     private bool triggerStatus = false;
-    private bool Open = false;
     private bool stop = false;
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -25,7 +24,6 @@ public class ChestInteraction : MonoBehaviour
         {
             Debug.Log("Opening Chest!");
             animator.SetBool("Open", true);
-            Open = true;
             stop = true;
             Debug.Log("Chest Opened!");
         }
