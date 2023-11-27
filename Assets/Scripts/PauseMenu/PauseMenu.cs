@@ -24,12 +24,14 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);
+        Cursor.visible = true;
         Time.timeScale = 0f;
     }
 
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        Cursor.visible = false;
         Time.timeScale = 1.0f;
     }
 
@@ -41,6 +43,7 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1.0f;
+        Cursor.visible = true;
         SceneManager.LoadScene(0);
     }
 
