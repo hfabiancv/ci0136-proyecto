@@ -6,13 +6,15 @@ using UnityEngine;
 public class Enemy : Character
 {
     public GameObject deathEffect;
-
+    AudioSource enemyAudio;
     // Start is called before the first frame update
     void Start()
     {
-        damage = 20;
+        health = 1000;
+        damage = 45;
     }
 
+    
     protected override void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Bullet")
@@ -22,6 +24,11 @@ public class Enemy : Character
             {
                 Debug.Log("enemy is hit by the player bullet");
                 base.ReceiveDamage(bullet.damage);
+                // Transform playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();; 
+                // float teleportDistance = 5f; 
+                // Vector2 randomPosition = playerTransform.position + UnityEngine.Random.Range(0, 4)* teleportDistance;
+                // randomPosition.y = transform.position.y;
+                // transform.position = randomPosition;
             }
         }
     }
@@ -37,4 +44,5 @@ public class Enemy : Character
     public override void Test() {
         Debug.Log("Test");  
     }
+
 }

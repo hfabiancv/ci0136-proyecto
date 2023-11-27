@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     // bullet damage
     public int damage = 10;
-
+    public bool useImpactEffect;
     public GameObject impactEffect;
 
     // bullet speed
@@ -15,14 +15,17 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        useImpactEffect = true;
         rb2D = GetComponent<Rigidbody2D>();
     }
 
     // destroy bullet when it hits something
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject effect = Instantiate(impactEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 0.5f);
+        //if (useImpactEffect == true) {
+            GameObject effect = Instantiate(impactEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
+        //}
         Destroy(gameObject);
     }
 
