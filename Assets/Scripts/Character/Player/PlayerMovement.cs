@@ -18,11 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDir;
     // current state
     private PlayerState currentState;
-
+    private bool sound;
     public new Camera camera;
     [SerializeField] private AudioClip stepSound;
     void Start()
     {
+        sound = false;
         rb2D = GetComponent<Rigidbody2D>();
         ChangeState(new IdleState(this));
     }
@@ -103,13 +104,17 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Sound()
     {
-        while (true) {
-            SoundController.instance.ExecuteSound(stepSound);
-            yield return new WaitForSeconds(0.5f);
-            if (isMoving == false) {
-                break;
+        if (sound == false) {
+            while (true) {
+                SoundController.instance.ExecuteSound(stepSound);
+                yield return new WaitForSeconds(0.5f);
+                if (isMoving == false) {
+                    break;
+                }
+                sound = true;
             }
         }
+        sound = false;
         
     }
 }
