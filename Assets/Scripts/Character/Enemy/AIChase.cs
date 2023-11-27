@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class AIChase : MonoBehaviour
 {
     public float speed;
@@ -16,9 +15,6 @@ public class AIChase : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animator = GetComponent<Animator>();
         sound = false;
-        //this.Log("hello");
-        Component c = this;
-        Debug.Log("componente: " + c);
     }
 
     private void Update()

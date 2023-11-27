@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character
+public class BossEnemy : Character
 {
     public GameObject deathEffect;
     AudioSource enemyAudio;
@@ -24,11 +24,6 @@ public class Enemy : Character
             {
                 Debug.Log("enemy is hit by the player bullet");
                 base.ReceiveDamage(bullet.damage);
-                // Transform playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();; 
-                // float teleportDistance = 5f; 
-                // Vector2 randomPosition = playerTransform.position + UnityEngine.Random.Range(0, 4)* teleportDistance;
-                // randomPosition.y = transform.position.y;
-                // transform.position = randomPosition;
             }
         }
     }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3069854311363620447
+--- !u!1 &5396045985291234232
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2763051200525309290}
-  - component: {fileID: 1145189915195189980}
-  - component: {fileID: 7714222505060010033}
-  - component: {fileID: 1144874546451899711}
-  - component: {fileID: -462240081762144967}
-  m_Layer: 10
-  m_Name: Bullet
-  m_TagString: Bullet
+  - component: {fileID: 1537208614784877648}
+  - component: {fileID: 7748789046506665335}
+  - component: {fileID: 3085885302909965862}
+  - component: {fileID: 8530885824542016707}
+  - component: {fileID: 6642813427124233596}
+  - component: {fileID: 6616051929888303790}
+  - component: {fileID: -4046230772280357270}
+  m_Layer: 6
+  m_Name: Necromancer Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2763051200525309290
+--- !u!4 &1537208614784877648
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3069854311363620447}
+  m_GameObject: {fileID: 5396045985291234232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.97, y: 0.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 11.818, y: -21.13, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1145189915195189980
+--- !u!212 &7748789046506665335
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3069854311363620447}
+  m_GameObject: {fileID: 5396045985291234232}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1361447066, guid: b0f02aa55ca004e4eaed1957c797d967, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f6fa4700d10719a4e91695c474f98aa3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,13 +89,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7714222505060010033
-BoxCollider2D:
+--- !u!58 &3085885302909965862
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3069854311363620447}
+  m_GameObject: {fileID: 5396045985291234232}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -102,7 +104,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -116,30 +118,20 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0013787746, y: 0.0012142062}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.0019972324, y: -0.5407009}
   serializedVersion: 2
-  m_Size: {x: 0.2746358, y: 0.26808226}
-  m_EdgeRadius: 0
---- !u!50 &1144874546451899711
+  m_Radius: 0.6354332
+--- !u!50 &8530885824542016707
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3069854311363620447}
+  m_GameObject: {fileID: 5396045985291234232}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -157,21 +149,61 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &-462240081762144967
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!95 &6642813427124233596
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396045985291234232}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b190c2147047e84494e13b7ec1860ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6616051929888303790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3069854311363620447}
+  m_GameObject: {fileID: 5396045985291234232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbafa47a370242e4fbd6d0776b1b83b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 68ffafb7ff60b1b479fb99a912121492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  useImpactEffect: 1
-  impactEffect: {fileID: 1405385530101130048, guid: 2c1ddf492cb821845b252c43d1829196, type: 3}
-  speed: 15
+  health: 180
+  damage: 25
+  id: Big Demon
+  audio: {fileID: 8300000, guid: 7f16d530d3ee223fcb7c559d7fe8f933, type: 3}
+  deathEffect: {fileID: 8638212397507965406, guid: b3c3a79295c337f4f8176640da94e1e6, type: 3}
+--- !u!114 &-4046230772280357270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396045985291234232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31ad4d8ce6fa01de8a208dd35119c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  obstacleDetectionRange: 1
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyAudio: {fileID: 8300000, guid: 7f16d530d3ee223fcb7c559d7fe8f933, type: 3}

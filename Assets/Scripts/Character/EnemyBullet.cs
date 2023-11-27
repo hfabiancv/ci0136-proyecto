@@ -2,30 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     // bullet damage
+    //enum SpwawnerType { Straight, Spin};
     public int damage = 10;
-    public bool useImpactEffect;
+
     public GameObject impactEffect;
 
     // bullet speed
     public float speed = 5f;
     private Rigidbody2D rb2D;
+   // private 
     // Start is called before the first frame update
     void Start()
     {
-        useImpactEffect = true;
         rb2D = GetComponent<Rigidbody2D>();
     }
 
     // destroy bullet when it hits something
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (useImpactEffect == true) {
-            GameObject effect = Instantiate(impactEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 0.5f);
-        //}
+        GameObject effect = Instantiate(impactEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.5f);
         Destroy(gameObject);
     }
 
