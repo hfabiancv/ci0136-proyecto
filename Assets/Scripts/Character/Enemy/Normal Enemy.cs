@@ -6,15 +6,20 @@ using UnityEngine;
 public class Enemy : Character
 {
     public GameObject deathEffect;
-    AudioSource enemyAudio;
+    private Material matDefault;
+    private Material matWhite;
+
+    private SpriteRenderer sr;
+
     // Start is called before the first frame update
     void Start()
     {
-        health = 1000;
-        damage = 45;
+        sr = GetComponent<SpriteRenderer>();
+        matWhite = Resources.Load("WhiteFlash", typeof(Material)) as Material;
+        matDefault = sr.material;
+        damage = 20;
     }
 
-    
     protected override void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Bullet")
@@ -23,14 +28,30 @@ public class Enemy : Character
             if (bullet != null)
             {
                 Debug.Log("enemy is hit by the player bullet");
-                base.ReceiveDamage(bullet.damage);
-                // Transform playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();; 
-                // float teleportDistance = 5f; 
-                // Vector2 randomPosition = playerTransform.position + UnityEngine.Random.Range(0, 4)* teleportDistance;
-                // randomPosition.y = transform.position.y;
-                // transform.position = randomPosition;
+                ReceiveDamage(bullet.GetDamage());
+                // flash the enemy
+                sr.material = matWhite;
+                if (health <= 0)
+                {
+                    Die();
+                }
+                else
+                {
+                    Invoke("ResetMaterial", .1f);
+                }
             }
         }
+    }
+
+    protected override void ReceiveDamage(int damage)
+    {
+        health -= damage;
+        // Debug.Log("Enemy received damage. Health: " + health);
+    }
+
+    void ResetMaterial()
+    {
+        sr.material = matDefault;
     }
 
     protected override void Die() {
@@ -44,5 +65,4 @@ public class Enemy : Character
     public override void Test() {
         Debug.Log("Test");  
     }
-
 }

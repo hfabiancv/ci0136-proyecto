@@ -20,7 +20,7 @@ public class BossChase : MonoBehaviour
 
     private void Update()
     {
-        StartCoroutine(getSound());
+        // StartCoroutine(getSound());
         Vector2 direction = target.position - transform.position;
         direction.Normalize();
 
@@ -52,14 +52,14 @@ public class BossChase : MonoBehaviour
         }
     }
 
-    public IEnumerator getSound() {
-        if (sound == false) {
-            while (true) {
-                sound = true;
-                SoundController.instance.ExecuteSound(bossAudio); 
-                yield return new WaitForSeconds(1);   
-            }
-            sound = false;
-        }
-    }
+    // public IEnumerator getSound() {
+    //     if (sound == false) {
+    //         while (true) {
+    //             sound = true;
+    //             SoundController.instance.ExecuteSound(bossAudio); 
+    //             yield return new WaitForSeconds(1);   
+    //         }
+    //         sound = false;
+    //     }
+    // }
 }

@@ -28,7 +28,7 @@ public class AIChaseBoss : MonoBehaviour
     private void Update()
     {
         //shoot();
-        StartCoroutine(getSound());
+        // StartCoroutine(getSound());
         Vector2 direction = target.position - transform.position;
         direction.Normalize();
 
@@ -60,36 +60,36 @@ public class AIChaseBoss : MonoBehaviour
         }
     }
 
-    public IEnumerator getSound() {
-        float angle = 0f;
-        float counter = 0;
-        if (sound == false) {
-            while (true) {
-                sound = true;
-                SoundController.instance.ExecuteSound(enemyAudio); 
-                // float bulDirX = transform.position.x + Mathf.Sin(((angle + 180f * counter)* Mathf.PI)/180f);
-                // float bulDirY = transform.position.x + Mathf.Sin(((angle + 180f * counter)* Mathf.PI)/180f);
-                // Vector3 bulMoveVector = new Vector3(bulDirX, bulDirY, 0f);
-                // Vector2 bulDir = (bulMoveVector - transform.position).normalized;
-                // Transform enemyTransform = GameObject.FindGameObjectWithTag("Boss").GetComponent<Transform>();
-                // GameObject bullet = Instantiate(bulletPrefab, enemyTransform.position, enemyTransform.rotation);
-                // bullet.transform.position = transform.position;
-                // bullet.transform.rotation = transform.rotation;
-                // bullet.setActive(true);
-                // bullet.GetComponent<Bullet>().SetMoveDirection(bulDir);
-                //GameObject bullet = Instantiate(bulletPrefab, spawner.position, transform.rotation);
+    // public IEnumerator getSound() {
+    //     float angle = 0f;
+    //     float counter = 0;
+    //     if (sound == false) {
+    //         while (true) {
+    //             sound = true;
+    //             SoundController.instance.ExecuteSound(enemyAudio); 
+    //             // float bulDirX = transform.position.x + Mathf.Sin(((angle + 180f * counter)* Mathf.PI)/180f);
+    //             // float bulDirY = transform.position.x + Mathf.Sin(((angle + 180f * counter)* Mathf.PI)/180f);
+    //             // Vector3 bulMoveVector = new Vector3(bulDirX, bulDirY, 0f);
+    //             // Vector2 bulDir = (bulMoveVector - transform.position).normalized;
+    //             // Transform enemyTransform = GameObject.FindGameObjectWithTag("Boss").GetComponent<Transform>();
+    //             // GameObject bullet = Instantiate(bulletPrefab, enemyTransform.position, enemyTransform.rotation);
+    //             // bullet.transform.position = transform.position;
+    //             // bullet.transform.rotation = transform.rotation;
+    //             // bullet.setActive(true);
+    //             // bullet.GetComponent<Bullet>().SetMoveDirection(bulDir);
+    //             //GameObject bullet = Instantiate(bulletPrefab, spawner.position, transform.rotation);
 
-                //Destroy(bullet, 2f);
-                ++counter;
-                angle += 10f;
-                if (angle >= 360f) {
-                    angle = 0f;
-                }
-                yield return new WaitForSeconds(1);
-            }
-            sound = false;
-        }
-    }
+    //             //Destroy(bullet, 2f);
+    //             ++counter;
+    //             angle += 10f;
+    //             if (angle >= 360f) {
+    //                 angle = 0f;
+    //             }
+    //             yield return new WaitForSeconds(1);
+    //         }
+
+    //     }
+    // }
     // public void shoot() {
     //     // for (int i = 0; i < )
     //     // Vector3 shootDirection = (target.position - spawner.position).normalized;

@@ -2,15 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
-    public int maxHealth = 100;
     public int health = 100;
     public int damage = 10;
     public string id = "";
-    public AudioClip audio;
 
     public event EventHandler OnCharacterDied;
 
@@ -29,9 +26,6 @@ public class Character : MonoBehaviour
         Debug.Log("Character died.");
         signalDeath();
         Destroy(gameObject);
-        Debug.Log("Death registered, changing scene!");
-        Cursor.visible = true;
-        SceneManager.LoadScene(2);
     }
 
     protected void signalDeath()

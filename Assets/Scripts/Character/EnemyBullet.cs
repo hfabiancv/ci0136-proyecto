@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     // bullet damage
-    //enum SpwawnerType { Straight, Spin};
     public int damage = 10;
 
     public GameObject impactEffect;

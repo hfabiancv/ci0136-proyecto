@@ -25,10 +25,10 @@ public class WaveSpawner : MonoBehaviour
 
     public event EventHandler OnBattleStarted;
     public event EventHandler OnBattleOver;
-    public AudioClip enemy1Audio;
-    public AudioClip enemy2Audio;
-    public AudioClip enemy3Audio;
+
     [SerializeField] private ColliderTrigger colliderTrigger;
+
+    public bool randomSpawn = false;
 
     private void Awake()
     {
@@ -68,17 +68,11 @@ public class WaveSpawner : MonoBehaviour
             int enemyNum = UnityEngine.Random.Range(0, enemiesLength);
             int spawnNum = UnityEngine.Random.Range(0, spawnpoints.Length);
             string name = currentWave.GetEnemyIds()[enemyNum];
+            if (!randomSpawn) {
+                spawnNum = i % spawnpoints.Length;
+            }
             Transform spawnpoint = spawnpoints[spawnNum];
             Character enemy = _enemyFactory.Create(name, spawnpoint);
-            if (enemyNum == 1) {
-                Debug.Log("1");
-            } else {
-                if (enemyNum == 2) {
-                    Debug.Log("2");
-                } else {
-                    Debug.Log("3");
-                }
-            }
             enemy.OnCharacterDied += OnEnemyDied;
         }
     }

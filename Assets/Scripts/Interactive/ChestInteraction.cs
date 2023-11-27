@@ -7,6 +7,7 @@ public class ChestInteraction : MonoBehaviour
 {
     public Animator animator;
     private bool triggerStatus = false;
+
     private bool stop = false;
 
     private void OnTriggerEnter2D(Collider2D collider)
