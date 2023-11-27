@@ -28,6 +28,8 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField] private ColliderTrigger colliderTrigger;
 
+    public bool randomSpawn = false;
+
     private void Awake()
     {
         currentWave = waves[i];
@@ -66,6 +68,9 @@ public class WaveSpawner : MonoBehaviour
             int enemyNum = UnityEngine.Random.Range(0, enemiesLength);
             int spawnNum = UnityEngine.Random.Range(0, spawnpoints.Length);
             string name = currentWave.GetEnemyIds()[enemyNum];
+            if (!randomSpawn) {
+                spawnNum = i % spawnpoints.Length;
+            }
             Transform spawnpoint = spawnpoints[spawnNum];
             Character enemy = _enemyFactory.Create(name, spawnpoint);
             enemy.OnCharacterDied += OnEnemyDied;

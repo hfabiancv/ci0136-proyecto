@@ -5,41 +5,22 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    // Reference to the weapon's spawner
-    public Transform spawner;
-    // Reference to the bullet prefab
-    public GameObject bulletPrefab;
-    // Reference to the animator component
-    public Animator animator;
+    public Weapon currentWeapon;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
         // Check if the player is firing
         CheckFiring();
     }
 
-    // Spawns a bullet at the weapon's spawner if the player is firing
     private void CheckFiring()
     {
         // Check if the player is firing
         if (Input.GetMouseButtonDown(0))
         {
-            // Spawn a bullet at the spawner
-            GameObject bullet = Instantiate(bulletPrefab, spawner.position, transform.rotation);
-            CinemachineShake.Instance.ShakeCamera(2f, .1f);
-            // Start shooting animation
-            animator.SetTrigger("Shoot");
-            // Destroy the bullet after 2 seconds
-            Destroy(bullet, 2f);
+            // Call the Shoot method of the current weapon
+            currentWeapon.Shoot();
         }
     }
-
-
 }
 

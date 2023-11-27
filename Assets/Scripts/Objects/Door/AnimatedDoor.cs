@@ -7,8 +7,8 @@ public class AnimatedDoor : MonoBehaviour
 {
     public GameObject[] doorSides;
 
-    private Collider2D collider2D;
-
+    new private Collider2D collider2D;
+//
     // Start is called before the first frame update
     private void Awake()
     {

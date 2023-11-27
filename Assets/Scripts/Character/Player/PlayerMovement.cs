@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerState currentState;
 
     public new Camera camera;
-
+    [SerializeField] private AudioClip stepSound;
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         // get player input
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
+
         // update the current state
         currentState.Update();
 
@@ -95,4 +96,16 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    // IEnumerator Sound()
+    // {
+    //     while (true) {
+    //         SoundController.instance.ExecuteSound(stepSound);
+    //         yield return new WaitForSeconds(0.5f);
+    //         if (isMoving == false) {
+    //             break;
+    //         }
+    //     }
+        
+    // }
 }

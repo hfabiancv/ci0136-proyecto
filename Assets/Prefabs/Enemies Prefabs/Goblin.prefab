@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ffafb7ff60b1b479fb99a912121492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  damage: 10
+  health: 35
+  damage: 5
   id: Goblin
   deathEffect: {fileID: 8638212397507965406, guid: b3c3a79295c337f4f8176640da94e1e6, type: 3}
