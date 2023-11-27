@@ -4,18 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Healthbar : Player
+public class Healthbar : MonoBehaviour
 {
+    [SerializeField] Player player;
     public Image[] hearts;
     public Sprite fullHearts;
     public Sprite emptyHearts;
 
     public int numOfHearts;
 
+    
     void Start()
     {
         int counter = 1;
-        for (int i = 1; i <= maxHealth; i++)
+        for (int i = 1; i <= player.maxHealth; i++)
         {
             if (counter == 20)
             {
@@ -29,7 +31,7 @@ public class Healthbar : Player
     // Update is called once per frame
     void Update()
     {
-        int heartsToShow = Mathf.CeilToInt((float)health / 20);
+        int heartsToShow = Mathf.CeilToInt((float)player.health / 20);
 
         // Disable all hearts
         for (int i = 0; i < hearts.Length; i++)

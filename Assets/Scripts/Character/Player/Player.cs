@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player : Character
 {
     private Animator animator;
-    public int maxHealth = 100;
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 100;
         health = 100;
         // melee damage
         damage = 10;
