@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class Character : MonoBehaviour
         Debug.Log("Character died.");
         signalDeath();
         Destroy(gameObject);
+        Debug.Log("Death registered, changing scene!");
+        SceneManager.LoadScene(2);
     }
 
     protected void signalDeath()
