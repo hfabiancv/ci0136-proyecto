@@ -29,6 +29,7 @@ public class Character : MonoBehaviour
         signalDeath();
         Destroy(gameObject);
         Debug.Log("Death registered, changing scene!");
+        Cursor.visible = true;
         SceneManager.LoadScene(2);
     }
 
