@@ -5,14 +5,19 @@ using UnityEngine;
 public class Player : Character
 {
     private Animator animator;
+    private SpriteRenderer spriteRender;
+
+    [SerializeField] private float iFrameDuration;
+    [SerializeField] private int numberOfFlashes;
+
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = 100;
         health = 100;
-        // melee damage
         damage = 10;
         animator = GetComponent<Animator>();
+        spriteRender = GetComponent<SpriteRenderer>();
     }
 
     protected override void OnTriggerEnter2D(Collider2D coll)
@@ -25,6 +30,7 @@ public class Player : Character
                 animator.SetTrigger("Hit");
                 Debug.Log("Player is hit by the enemy");
                 base.ReceiveDamage(enemy.damage);
+                StartCoroutine(Invulnerability());
             }
         }
 
@@ -36,7 +42,21 @@ public class Player : Character
                 animator.SetTrigger("Hit");
                 Debug.Log("Player is hit by the enemy bullet");
                 base.ReceiveDamage(bullet.GetDamage());
+                StartCoroutine(Invulnerability());
             }
         }
+    }
+
+    private IEnumerator Invulnerability()
+    {
+        Physics2D.IgnoreLayerCollision(6, 7, true);
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            spriteRender.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(iFrameDuration / (numberOfFlashes * 2));
+            spriteRender.color = Color.white;
+            yield return new WaitForSeconds(iFrameDuration / (numberOfFlashes * 2));
+        }
+        Physics2D.IgnoreLayerCollision(6, 7, false);
     }
 }

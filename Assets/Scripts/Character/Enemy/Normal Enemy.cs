@@ -17,7 +17,6 @@ public class Enemy : Character
         sr = GetComponent<SpriteRenderer>();
         matWhite = Resources.Load("WhiteFlash", typeof(Material)) as Material;
         matDefault = sr.material;
-        damage = 20;
     }
 
     protected override void OnTriggerEnter2D(Collider2D coll)
