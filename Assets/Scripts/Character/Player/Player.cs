@@ -13,8 +13,8 @@ public class Player : Character
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 100;
-        health = 100;
+        maxHealth = 5;
+        health = 5;
         damage = 10;
         animator = GetComponent<Animator>();
         spriteRender = GetComponent<SpriteRenderer>();

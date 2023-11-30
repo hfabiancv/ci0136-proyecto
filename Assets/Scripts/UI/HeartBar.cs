@@ -16,22 +16,16 @@ public class Healthbar : MonoBehaviour
     
     void Start()
     {
-        int counter = 1;
         for (int i = 1; i <= player.maxHealth; i++)
         {
-            if (counter == 20)
-            {
-                counter = 1;
-                numOfHearts++;
-            }
-            counter++;
+            numOfHearts++;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        int heartsToShow = Mathf.CeilToInt((float)player.health / 20);
+        int heartsToShow = Mathf.CeilToInt((float)player.health);
 
         // Disable all hearts
         for (int i = 0; i < hearts.Length; i++)
