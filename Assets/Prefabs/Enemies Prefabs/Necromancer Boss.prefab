@@ -184,11 +184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ffafb7ff60b1b479fb99a912121492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   health: 180
-  damage: 25
+  damage: 1
   id: Big Demon
-  audio: {fileID: 8300000, guid: 7f16d530d3ee223fcb7c559d7fe8f933, type: 3}
   deathEffect: {fileID: 8638212397507965406, guid: b3c3a79295c337f4f8176640da94e1e6, type: 3}
+  animator: {fileID: 0}
 --- !u!114 &-4046230772280357270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,3 +208,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   enemyAudio: {fileID: 8300000, guid: 7f16d530d3ee223fcb7c559d7fe8f933, type: 3}
+  spawner: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  bullet: {fileID: 0}
+  spawnedBullet: {fileID: 0}
