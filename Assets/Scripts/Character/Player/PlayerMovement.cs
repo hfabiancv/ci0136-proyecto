@@ -20,30 +20,76 @@ public class PlayerMovement : MonoBehaviour
     private PlayerState currentState;
 
     public new Camera camera;
+
+    
+    [Header("Sound Settings")]
     [SerializeField] private AudioClip stepSound;
+
+
+    [Header("Dash Settings")]
+    [SerializeField] private float dashSpeed = 10f;
+    [SerializeField] private float dashDuration = 0.5f;
+    [SerializeField] private float dashCooldown = 1f;
+    bool isDashing;
+    bool canDash;
+
+
+    // [SerializeField] private float iFrameDuration;
+
+
     void Start()
     {
+        isDashing = false;
+        canDash = true;
         rb2D = GetComponent<Rigidbody2D>();
         ChangeState(new IdleState(this));
     }
 
     void Update()
     {
-        // get player input
-        x = Input.GetAxisRaw("Horizontal");
-        y = Input.GetAxisRaw("Vertical");
+        if (!isDashing) {
+            // get player input
+            x = Input.GetAxisRaw("Horizontal");
+            y = Input.GetAxisRaw("Vertical");
 
-        // update the current state
-        currentState.Update();
+            if (Input.GetKeyDown(KeyCode.Space) && canDash) {
+                StartCoroutine(Dash());
+            }
+
+            // update the current state
+            currentState.Update();
 
 
-        // Get the position of the mouse cursor in the game world
-        Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+            // Get the position of the mouse cursor in the game world
+            Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+        }
     }
 
     private void FixedUpdate()
     {
-        rb2D.velocity = moveDir * moveSpeed * Time.deltaTime;
+        if (!isDashing) {
+            rb2D.velocity = moveDir * moveSpeed * Time.deltaTime;
+            // return;
+        }
+    }
+
+    private IEnumerator Dash() {
+        canDash = false;
+        isDashing = true;
+        rb2D.velocity = new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed);
+        
+        Physics2D.IgnoreLayerCollision(6, 7, true);
+        Physics2D.IgnoreLayerCollision(7, 10, true);
+        
+        yield return new WaitForSeconds(dashDuration);
+        
+        Physics2D.IgnoreLayerCollision(6, 7, false);
+        Physics2D.IgnoreLayerCollision(7, 10, false);
+    
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 
     private void StopMoving()
