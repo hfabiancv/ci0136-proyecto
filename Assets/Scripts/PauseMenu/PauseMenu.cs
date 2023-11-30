@@ -35,11 +35,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    public void Load()
-    {
-        
-    }
-
     public void MainMenu()
     {
         Time.timeScale = 1.0f;
