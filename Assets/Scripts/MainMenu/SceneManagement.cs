@@ -15,7 +15,7 @@ public class SceneManagement : MonoBehaviour
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("Scene changed!");
         MainMenu.SetActive(false);
-        SceneManager.UnloadSceneAsync(sceneIndex);
+        // SceneManager.UnloadSceneAsync(sceneIndex);
         SceneManager.LoadScene(gameStartScene);
         if (gameStartScene != 1)
         {
