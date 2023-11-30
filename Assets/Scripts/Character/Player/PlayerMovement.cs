@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     bool canDash;
 
 
-    // [SerializeField] private float iFrameDuration;
+    [SerializeField] private TrailRenderer trailRenderer;
 
 
     void Start()
@@ -77,12 +77,12 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         rb2D.velocity = new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed);
-        
+        trailRenderer.emitting = true;
         Physics2D.IgnoreLayerCollision(6, 7, true);
         Physics2D.IgnoreLayerCollision(7, 10, true);
         
         yield return new WaitForSeconds(dashDuration);
-        
+        trailRenderer.emitting = false;
         Physics2D.IgnoreLayerCollision(6, 7, false);
         Physics2D.IgnoreLayerCollision(7, 10, false);
     
