@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Blocking
   - Boss
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - Blocking
   - Trigger
   - Bullet
-  - 
-  - 
+  - Background
+  - Post
   - 
   - 
   - 
@@ -54,6 +55,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 362953227
+    locked: 0
+  - name: Background
+    uniqueID: 326530923
     locked: 0
   - name: Default
     uniqueID: 0
